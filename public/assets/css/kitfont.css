@@ -1,0 +1,59 @@
+
+@font-face{
+    font-family: "elementskit";
+    src: url("../fonts/fontkit.woff");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
+
+
+.ekit-wid-con .fasicon,.ekit-wid-con .icon,.ekit-wid-con .icon::before,.fasicon,.icon,.icon::before {
+    font-family: elementskit!important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+
+.ekit-wid-con .fasicon.icon-phone-handset::before,.ekit-wid-con .icon.icon-phone-handset::before,.icon.icon-phone-handset::before {
+    content: "\e830"
+}
+.ekit-wid-con .fasicon.icon-email::before, .ekit-wid-con .icon.icon-email::before, .icon.icon-email::before {
+    content: "\e998";
+}
+.ekit-wid-con .fasicon.icon-whatsapp-2::before, .ekit-wid-con .icon.icon-whatsapp-2::before, .icon.icon-whatsapp-2::before {
+    content: "\eb70";
+}
+.ekit-wid-con .icon.icon-down-arrow1::before, .icon.icon-down-arrow1::before {
+    content: "\e994";
+}
+.ekit-wid-con .icon.icon-down-arrow1::before, .icon.icon-down-arrow1::before {
+    content: "\e994";
+}
+.ekit-wid-con .fasicon.icon-apartment1::before, .ekit-wid-con .icon.icon-apartment1::before, .icon.icon-apartment1::before {
+    content: "\e801";
+}
+.ekit-wid-con .fasicon.icon-design::before, .ekit-wid-con .icon.icon-design::before, .icon.icon-design::before {
+    content: "\ebb9";
+}
+.ekit-wid-con .fasicon.icon-gift1::before, .ekit-wid-con .icon.icon-gift1::before, .icon.icon-gift1::before {
+    content: "\e844";
+}
+.ekit-wid-con .fasicon.icon-social-share::before, .ekit-wid-con .icon.icon-social-share::before, .icon.icon-social-share::before {
+    content: "\e937";
+}
+.ekit-wid-con .fasicon.icon-Computer::before, .ekit-wid-con .icon.icon-Computer::before, .icon.icon-Computer::before {
+    content: "\ebb1";
+}
+.ekit-wid-con .fasicon.icon-quote::before, .ekit-wid-con .icon.icon-quote::before, .icon.icon-quote::before {
+    content: "\e97e";
+}
+.ekit-wid-con .fasicon.icon-map-marker::before, .ekit-wid-con .icon.icon-map-marker::before, .icon.icon-map-marker::before {
+    content: "\e833";
+}
