@@ -212,7 +212,7 @@ Route::group(['prefix' => '/admin'], function () {
 
     Route::get('/about-us', function () {
         return view('admin.about.index');
-    })->name('about');
+    })->name('admin.about');
     Route::get('/manage-contact', function () {
         return view('admin.contact.index');
     })->name('admin.contact');

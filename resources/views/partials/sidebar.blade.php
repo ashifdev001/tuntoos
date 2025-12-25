@@ -125,7 +125,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('about') }}" class="nav-link  {{ request()->is('admin/about*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.about') }}" class="nav-link  {{ request()->is('admin/about*') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-info"></i>
                         <p>About Us</p>
                     </a>
