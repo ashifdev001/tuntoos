@@ -31,6 +31,7 @@
                                         <tr>
                                             <th>Sr No.</th>
                                             <th>Title</th>
+                                            <th>Tag</th>
                                             <th>Image</th>
                                             <th>Description</th>
                                             <th>Action</th>

@@ -22,7 +22,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 // Frontend Routes
 Route::get('/', function () {
-    return view('frontend.pages.index');
+    $dropdownItems = \App\Models\DropdownItem::all();
+    return view('frontend.pages.index', compact('dropdownItems'));
 })->name('home');
 
 Route::get('/franchise', function () {
@@ -114,6 +115,10 @@ Route::get('/contact', function () {
 
     return view('frontend.pages.contact-us', compact('settings'));
 })->name('contact');
+
+Route::get('thank-you', function () {
+    return view('frontend.pages.thankyou');
+})->name('thank-you');
 
 // Admin Routes
 Route::group(['prefix' => '/admin'], function () {
@@ -231,6 +236,8 @@ Route::group(['prefix' => '/admin'], function () {
     Route::get('/videos/edit/{id}', function ($id = null) {
         return view('admin.videos.manage', ['id' => $id]);
     })->name('edit.video');
-
+     Route::get('/dropdown-items', function () {
+        return view('admin.dropdown-items.index');
+    })->name('admin.dropdown-items');
 });
 

@@ -3,7 +3,7 @@ $(function () {
         "enquiries",
         "search",
         appconfig.apibaseurl + "/enquiries",
-        ["id", "name", "email", "phone", "message", "created_at"],
+        ["id", "name", "email", "phone", "enq_for","state","city","subject", "message", "created_at"],
         `<div class="btn-group">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-cog" aria-hidden="true"></i>

@@ -34,6 +34,16 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="title">Image Tag</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="tag"
+                                               name="tag"
+                                               placeholder="Enter image tag"
+                                               maxlength="255">
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="description">Description</label>
                                         <textarea class="form-control"
                                                   id="description"

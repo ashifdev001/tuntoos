@@ -7,6 +7,7 @@ use App\Http\Controllers\API\BlogController;
 use App\Http\Controllers\API\JobController;
 use App\Http\Controllers\API\BrandController;
 use App\Http\Controllers\API\CustomerSayController;
+use App\Http\Controllers\API\DropdownItemController;
 use App\Http\Controllers\API\EventController;
 use App\Http\Controllers\API\FlavorController;
 use App\Http\Controllers\API\GalleryController;
@@ -102,6 +103,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::apiResource('teams', TeamController::class);
     Route::apiResource('flavors', FlavorController::class);
     Route::apiResource('videos', VideoController::class);
+    Route::apiResource('dropdown-items', DropdownItemController::class);
     
 
     // Enquiries (admin only)

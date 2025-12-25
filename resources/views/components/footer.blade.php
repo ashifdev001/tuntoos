@@ -60,7 +60,7 @@
                             <div class="footer-widget newsletter-widget">
                                 <h6>Get Email</h6>
                                 <div class="newsletter-form">
-                                    <form method="post" action="#">
+                                    <form method="post" action="#" id="footer-news-latter">
                                         <div class="form-group">
                                             <input type="email" name="email" value="" placeholder="Your Email"
                                                 required="">

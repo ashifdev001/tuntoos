@@ -18,8 +18,7 @@
                 </ul>
                 <!-- Button Box -->
                 <div class="button-box">
-                    <a href="" class="theme-btn btn-style-two clearfix"><span class="icon"></span>Get In
-                        Now</a>
+                    <a href="javascript:void(0)" class="theme-btn btn-style-two clearfix open-popup" data-attr="general-enq"><span class="icon"></span>Get Connect</a>
                 </div>
             </div>
         </div>
@@ -53,9 +52,10 @@
                 <!-- Email Form -->
                 <div class="email-form">
                     <div class="email-title">{{ $homeSection['dp_get_in_text'] }}</div>
-                    <form method="post" action="#">
+                    <form method="post" action="#" id="hero-news-latter">
                         <div class="form-group">
                             <input type="email" name="email" value="" placeholder="type your email" required="">
+                            <input type="hidden" name="enq_for" value="Deal Section Demand Product">
                             <button type="submit" class="submit-btn"><span class="icon flaticon-send"></span></button>
                         </div>
                     </form>

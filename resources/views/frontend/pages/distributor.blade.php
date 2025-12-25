@@ -32,7 +32,7 @@
                         <div class="sec-title">
                             {!! $settings['distributor_description'] !!}
                         </div>
-                        <a href="" class="theme-btn btn-style-two clearfix"><span class="icon"></span>Enquire
+                        <a href="javascript:void(0)" class="theme-btn btn-style-two clearfix open-popup" data-attr="distributor"><span class="icon"></span>Enquire
                             Now</a>
                     </div>
                 </div>
@@ -44,13 +44,7 @@
     <!-- More content Section -->
     <section class="milkshake-section">
         <div class="auto-container">
-            <div class="inner-container">
-                <div class="lower-content">
-                    <div class="text">
-                        {!! $settings['distributor_more_content'] !!}
-                    </div>
-                </div>
-            </div>
+            {!! $settings['distributor_more_content'] !!}
         </div>
     </section>
     <!-- End More content Section -->

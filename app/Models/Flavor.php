@@ -11,6 +11,7 @@ class Flavor extends Model
     protected $fillable = [
         'image',
         'title',
+        'tag',
         'description',
         'slug',
     ];

@@ -31,8 +31,7 @@
                         <div class="sec-title">
                             {!! $settings['about_description'] !!}
                         </div>
-                        <a href="" class="theme-btn btn-style-two clearfix"><span class="icon"></span>Enquire
-                            Now</a>
+                        <a href="" class="theme-btn btn-style-two clearfix open-popup" data-attr="general-enq"><span class="icon"></span>Enquire Now</a>
                     </div>
                 </div>
 

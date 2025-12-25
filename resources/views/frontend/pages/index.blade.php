@@ -6,6 +6,7 @@
 @section('title')
     {{ env('APP_NAME') }}
 @endsection
+
 @section('content')
 
     <x-slider />
@@ -47,7 +48,7 @@
                             opportunities</div>
                         <div class="comment-form">
                             <!-- Contact Form -->
-                            <form method="post" action="">
+                            <form method="post" action="" id="contact-form">
                                 <div class="row clearfix">
 
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
@@ -61,19 +62,17 @@
                                         <input type="email" name="email" placeholder="Your Email" required="">
                                     </div>
                                     <div class="form-group contact-dropdown col-lg-6 col-md-6 col-sm-12">
-                                        <!--	    <label for="enquiry-type">Enquiry Type</label>-->
-                                        <select id="enquiry-type" name="enquiry-type" class="dropdown-input">
+                                        <select id="enquiry-type" name="enq_for" class="dropdown-input">
                                             <option value="">Select Occupation</option>
-                                            <option value="Service">Service</option>
-                                            <option value="feedback">Dealership</option>
-                                            <option value="Dealership">Trading</option>
-                                            <option value="Manufacturing">Manufacturing</option>
-                                            <option value="other">Other</option>
+                                            @forelse ($dropdownItems as $item)
+                                                <option value="{{ $item->title }}">{{ $item->title }}</option>
+                                            @empty
+                                                <option value="">No options available</option>
+                                            @endforelse
                                         </select>
-                                        <!--<input type="text" name="franchise_type" placeholder="franchise Type" required="">-->
                                     </div>
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <select class="form-control state-dropdown" name="state" required>
+                                        <select class="form-control state-dropdown" name="state">
                                             <option value="">Select State</option>
                                             <option value="Andhra Pradesh">Andhra Pradesh</option>
                                             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -116,7 +115,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <input type="text" name="city" placeholder="City" required="">
+                                        <input type="text" name="city" placeholder="City" />
                                     </div>
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                         <input type="text" name="subject" placeholder="Subject" required="">
@@ -126,9 +125,11 @@
                                     </div>
 
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="check-box"><input type="checkbox" name="shipping-option"
-                                                id="account-option"> &ensp; <label for="account-option">Save my
-                                                name, email, phone number, in this website.</label></div>
+                                        <div class="check-box">
+                                            <input type="checkbox" name="shipping-option" id="account-option"> &ensp; <label
+                                                for="account-option">Save my
+                                                name, email, phone number, in this website.</label>
+                                        </div>
                                     </div>
 
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
@@ -163,5 +164,58 @@
     <x-brand />
 @endsection
 @section('scripts')
-    <script src="{{ asset('assets/frontend/js/appointments.js') }}"></script>
+    <script>
+        if ($('#contact-form').length) {
+            $('#contact-form').validate({
+                rules: {
+                    name: { required: true },
+                    phone: { required: true },
+                    subject: { required: true },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    "shipping-option": {
+                        required: true
+                    }
+                },
+
+                errorPlacement: function (error, element) {
+                    if (element.attr("type") === "checkbox") {
+                        error.insertAfter(element.closest('.check-box'));
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                submitHandler: function (form) {
+                    const $form = $(form);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: appconfig.apibaseurl + '/enquiries',
+                        data: $form.serialize(),
+                        dataType: 'json',
+                        beforeSend: function () {
+                            $form.find('button[type="submit"]')
+                                .prop('disabled', true)
+                                .text('Sending...');
+                        },
+                        success: function () {
+                            $form[0].reset();
+                            window.location.href = appconfig.siteutl + '/thank-you';
+                        },
+                        error: function (xhr) {
+                            alert("Something went wrong. Please try again.");
+                            console.error(xhr.responseText);
+                        },
+                        complete: function () {
+                            $form.find('button[type="submit"]')
+                                .prop('disabled', false)
+                                .text('Submit');
+                        }
+                    });
+                }
+            });
+        }
+    </script>
 @endsection

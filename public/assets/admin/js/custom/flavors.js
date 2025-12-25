@@ -72,6 +72,7 @@ $(document).ready(function () {
                 if (response.success) {
                     $("#title").val(response.data.title);
                     $("#description").val(response.data.description);
+                    $("#tag").val(response.data.tag);
 
                     if (response.data.image_url) {
                         $(".viewImg").html(
@@ -92,7 +93,7 @@ $(document).ready(function () {
             "flavors",
             "title",
             appconfig.apibaseurl + "/flavors",
-            ["id", "title", "image", "description"],
+            ["id", "title", "tag", "image", "description"],
             `<div class="btn-group">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-cog"></i>

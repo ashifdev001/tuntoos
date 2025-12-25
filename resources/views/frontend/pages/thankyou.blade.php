@@ -15,7 +15,7 @@
         <x-hero-section page="thankyou" />
 
         <!-- Thank You Message -->
-        <div class="section-full content-inner bg-white" >
+        <div class="section-full content-inner bg-white my-5" >
             <div class="container text-center">
                 <div class="thankyou-message max-w700 m-auto p-tb50" style="margin-bottom: 60px">
                     <div class="icon-box m-b30">

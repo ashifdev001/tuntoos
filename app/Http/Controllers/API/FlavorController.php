@@ -35,8 +35,9 @@ class FlavorController extends BaseController
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title'       => 'required|string|max:255|unique:flavors,title',
+            'title'       => 'nullable|string|max:255|unique:flavors,title',
             'description' => 'nullable|string',
+            'tag'         => 'nullable|string|max:255',
             'image'       => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -49,7 +50,7 @@ class FlavorController extends BaseController
         }
 
         $data = $validator->validated();
-        $data['slug']  = Str::slug($data['title']);
+        $data['slug']  = !empty($data['title']) ? Str::slug($data['title']) : uniqid();
         $data['image'] = null;
 
         if ($request->hasFile('image')) {
@@ -78,7 +79,8 @@ class FlavorController extends BaseController
     public function update(Request $request, Flavor $flavor)
     {
         $validator = Validator::make($request->all(), [
-            'title'       => 'required|string|max:255|unique:flavors,title,' . $flavor->id,
+            'title'       => 'nullable|string|max:255|unique:flavors,title,' . $flavor->id,
+            'tag'         => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'image'       => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -92,6 +94,7 @@ class FlavorController extends BaseController
         }
 
         $flavor->title       = $request->title;
+        $flavor->tag         = $request->tag;
         $flavor->description = $request->description;
         $flavor->slug        = Str::slug($request->title);
 

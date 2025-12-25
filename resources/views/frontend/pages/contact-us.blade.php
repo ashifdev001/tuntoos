@@ -34,7 +34,7 @@
 									<div class="row clearfix">
 
 										<div class="form-group col-lg-6 col-md-6 col-sm-12">
-											<input type="text" name="username" placeholder="Your Name" required="">
+											<input type="text" name="name" placeholder="Your Name" required="">
 										</div>
 										<div class="form-group col-lg-6 col-md-6 col-sm-12">
 											<input type="text" name="phone" placeholder="Contact Number" required="">
@@ -52,13 +52,13 @@
 										</div>
 
 										<div class="form-group col-lg-12 col-md-12 col-sm-12">
+											<input type="hidden" name="enq_for" value="Contact Us">
 											<button type="submit" class="theme-btn btn-style-four clearfix"><span
-													class="icon flaticon-arrow-pointing-to-right"></span>Send</button>
+													class="icon flaticon-arrow-pointing-to-right"></span>Submit</button>
 										</div>
 
 									</div>
 								</form>
-								<!-- Contact Form -->
 							</div>
 
 						</div>
@@ -114,5 +114,5 @@
 		<!-- End Map Section -->
 @endsection
 @section('scripts')
-    <script src="{{ asset('assets/frontend/js/enqSubmit.js') }}"></script>
+    {{-- <script src="{{ asset('assets/frontend/js/enqSubmit.js') }}"></script> --}}
 @endsection

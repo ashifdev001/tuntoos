@@ -162,11 +162,14 @@ class UsersController extends BaseController
     public function saveEnq(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email',
+            'name' => 'nullable|string|max:255',
+            'email' => 'nullable|email',
             'phone' => 'nullable|string|max:255',
             'subject' => 'nullable|string|max:255',
-            'message' => 'nullable|string'
+            'message' => 'nullable|string',
+            'enq_for' => 'nullable|string',
+            'state' => 'nullable|string',
+            'city' => 'nullable|string',
         ]);
 
         if ($validator->fails()) {
@@ -180,6 +183,9 @@ class UsersController extends BaseController
             $enquiry->phone = $request->phone;
             $enquiry->subject = $request->subject;
             $enquiry->message = $request->message;
+            $enquiry->enq_for = $request->enq_for;
+            $enquiry->state = $request->state;
+            $enquiry->city = $request->city;
             $enquiry->save();
 
             Mail::to(env('ADMIN_EMAIL'))->send(new EnquiryMail([

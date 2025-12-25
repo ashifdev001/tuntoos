@@ -3,7 +3,13 @@
 
 <head>
     @include('frontend.inc.head')
-
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 
 <body class="hidden-bar-wrapper">
@@ -15,68 +21,7 @@
         <x-footer />
     </div>
     <!--Model Form Start-->
-    <div id="enquiryModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <!-- ADD THIS HERE -->
-            <h5 class="modal-title">Enquiry Form For Franchise</h5>
-            <!--<p class="modal-description">Fill the form below & we will contact you shortly.</p>-->
-            <!-- END ADDED PART -->
-
-            <form class="modal-form">
-
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Phone" required>
-                </div>
-
-                <div class="form-group">
-                    <select class="modal-content form-control state-dropdown" required>
-                        <option value="">Select occupation</option>
-                        <option>Service</option>
-                        <option>Dealership</option>
-                        <option>Trading</option>
-                        <option>Manufacturing</option>
-                        <option>Others</option>
-                        <!-- Add others if needed -->
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <select class="modal-content form-control" required>
-                        <option value="">Select State</option>
-                        <option>Andhra Pradesh</option>
-                        <option>Assam</option>
-                        <option>Bihar</option>
-                        <option>Gujarat</option>
-                        <option>Maharashtra</option>
-                        <option>Tamil Nadu</option>
-                        <option>Uttar Pradesh</option>
-                        <option>West Bengal</option>
-                        <!-- Add others if needed -->
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="City" required>
-                </div>
-
-                <div class="form-group">
-                    <textarea class="form-control" placeholder="Message" rows="3" required></textarea>
-                </div>
-
-                <button type="submit" class="modal-submit-btn">Submit</button>
-
-            </form>
-        </div>
-    </div>
+    <x-enquiry-modal />
 
     <!--Model Form End-->
 
@@ -86,7 +31,8 @@
         <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
 
         <nav class="menu-box">
-            <div class="nav-logo"><a href="index.html"><img src="{{ asset('assets/frontend/images/logo-removebg-preview.png')}}" alt="" title=""></a>
+            <div class="nav-logo"><a href="/"><img src="{{ asset('assets/frontend/images/logo-removebg-preview.png')}}"
+                        alt="" title=""></a>
             </div>
             <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
             </div>
@@ -97,7 +43,7 @@
         <div class="search-popup__overlay search-toggler"></div>
         <!-- /.search-popup__overlay -->
         <div class="search-popup__content">
-            <form action="#">
+            <form action="#" id="">
                 <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
                 <input type="text" id="search" placeholder="Search Here...">
                 <button type="submit" aria-label="search submit" class="thm-btn">
@@ -108,11 +54,98 @@
         <!-- /.search-popup__content -->
     </div>
     <!-- /.search-popup -->
-    {{-- <x-mobile-nav /> --}}
+    <x-mobile-nav />
 
 
     @include('frontend.inc.scripts')
     @yield('scripts')
+    <script>
+        if ($('#modal-form').length) {
+            $('#modal-form').validate({
+                rules: {
+                    name: {
+                        required: true
+                    },
+                    phone: {
+                        required: true
+                    },
+                    subject: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    }
+                },
+                submitHandler: function (form) {
+                    const $form = $(form);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: appconfig.apibaseurl + '/enquiries',
+                        data: $form.serialize(),
+                        dataType: 'json',
+                        beforeSend: function () {
+                            $form.find('button[type="submit"]')
+                                .prop('disabled', true)
+                                .text('Sending...');
+                        },
+                        success: function (response) {
+                            $form[0].reset();
+                            window.location.href = appconfig.siteutl + '/thank-you';
+                        },
+                        error: function (xhr) {
+                            alert("Something went wrong. Please try again.");
+                            console.error(xhr.responseText);
+                        },
+                        complete: function () {
+                            $form.find('button[type="submit"]')
+                                .prop('disabled', false)
+                                .text('Submit');
+                        }
+                    });
+                }
+            });
+        }
+        $('#footer-news-latter,#hero-news-latter,#deal-news-latter').submit(function (e) {
+            e.preventDefault();
+            let form = $(this);
+            $.ajax({
+                type: 'POST',
+                url: "{{ url('api/enquiries') }}",
+                data: form.serialize(),
+                dataType: 'json',
+                beforeSend: function () {
+                    form.find('button[type="submit"]')
+                        .prop('disabled', true)
+                        .text('Sending...');
+                },
+                success: function () {
+                    form[0].reset();
+                    window.location.href = appconfig.siteutl + '/thank-you';
+                },
+                error: function (xhr) {
+                    alert("Something went wrong. Please try again.");
+                    console.error(xhr.responseText);
+                },
+                complete: function () {
+                    form.find('button[type="submit"]')
+                        .prop('disabled', false)
+                        .text('Submit');
+                }
+            });
+
+        });
+        $('.open-popup').on('click', function () {
+            const data = {
+                'franchise': 'Enquiry Form For Franchise',
+                'distributor': 'Enquiry Form For Distributor',
+                'general-enq': 'General Enquiry Form'
+            };
+            $('.modal-title').text(data[$(this).data('attr')]);
+            $('#enquiryModal').show();
+        })
+    </script>
 </body>
 
 </html>

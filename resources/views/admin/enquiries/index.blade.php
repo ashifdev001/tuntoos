@@ -24,6 +24,10 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Enquiry For</th>
+                                            <th>State</th>
+                                            <th>City</th>
+                                            <th>Subject</th>
                                             <th>Message</th>
                                             <th>Created At</th>
                                             <th>Action</th>

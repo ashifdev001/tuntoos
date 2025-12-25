@@ -7,21 +7,38 @@
 
 <body>
     <h1>New Enquiry Received</h1>
-    <p><strong>Name:</strong> {{ htmlspecialchars($enquiry['name']) }}</p>
+
+    @if (!empty($enquiry['name']))
+        <p><strong>Name:</strong> {{ htmlspecialchars($enquiry['name']) }}</p>
+    @endif
+
     @if (!empty($enquiry['email']))
         <p><strong>Email:</strong> {{ htmlspecialchars($enquiry['email']) }}</p>
     @endif
-    <p><strong>Phone:</strong> {{ htmlspecialchars($enquiry['phone']) }}</p>
-    @if (!empty($enquiry['type']))
-        <p><strong>Type:</strong> {{ nl2br(htmlspecialchars($enquiry['type'])) }}</p>
+
+    @if (!empty($enquiry['phone']))
+        <p><strong>Phone:</strong> {{ htmlspecialchars($enquiry['phone']) }}</p>
     @endif
-    @if (!empty($enquiry['service']))
-        <p><strong>Service:</strong> {{ nl2br(htmlspecialchars($enquiry['service'])) }}</p>
+
+    @if (!empty($enquiry['enq_for']))
+        <p><strong>Enquiry For:</strong> {{ htmlspecialchars($enquiry['enq_for']) }}</p>
     @endif
-    
+
+    @if (!empty($enquiry['state']))
+        <p><strong>State:</strong> {{ htmlspecialchars($enquiry['state']) }}</p>
+    @endif
+
+    @if (!empty($enquiry['city']))
+        <p><strong>City:</strong> {{ htmlspecialchars($enquiry['city']) }}</p>
+    @endif
+
     @if (!empty($enquiry['message']))
-        <p><strong>Message:</strong> {{ nl2br(htmlspecialchars($enquiry['message'])) }}</p>
+        <p>
+            <strong>Message:</strong><br>
+            {!! nl2br(htmlspecialchars($enquiry['message'])) !!}
+        </p>
     @endif
+
 </body>
 
 </html>

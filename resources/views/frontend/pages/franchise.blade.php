@@ -7,43 +7,29 @@
     {{ env('APP_NAME') }}
 @endsection
 @section('content')
-    <!-- Page Title -->
     <x-hero-section page="franchise" />
-    <!-- End Page Title -->
-    <!-- Franchise details Section  -->
     <section class="fluid-section-one">
         <div class="outer-container clearfix">
-
-            <!-- Content Column -->
             <div class="content-column">
                 <div class="inner-column">
-                    <!-- Sec Title -->
                     <div class="sec-title">
                         {!! $settings['franchise_model'] !!}
                     </div>
-                    <!-- Button Box -->
                     <div class="button-box">
-                        <a href="" class="theme-btn btn-style-two clearfix"><span class="icon"></span>Enquire
+                        <a href="javascript:void(0)" class="theme-btn btn-style-two clearfix open-popup" data-attr="franchise"><span class="icon"></span>Enquire
                             Now</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Image Column -->
             <div class="image-column" style="background-image:url({{ asset('assets/frontend/images/about/invest.jpg') }})">
                 <figure class="image-box"><img src="{{  $settings['franchise_image_url'] }}" alt=""></figure>
             </div>
-
         </div>
     </section>
-    <!-- End Franchise Section -->
-    <!-- About Section -->
     <section class="juice-section">
         <div class="section-text">Fantoos</div>
         <div class="auto-container">
             <div class="row clearfix">
-
-                <!-- Image Column -->
                 <div class="image-column col-lg-7 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="image">
@@ -51,28 +37,19 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Content Column -->
                 <div class="content-column col-lg-5 col-md-12 col-sm-12">
                     <div class="inner-column">
-                        <!-- Sec Title -->
                         <div class="sec-title">
                             {!! $settings['funtoos_description'] !!}
                         </div>
-                        <a href="" class="theme-btn btn-style-two clearfix"><span class="icon"></span>Enquire
+                        <a href="javascript:void(0)" class="theme-btn btn-style-two clearfix open-popup" data-attr="franchise"><span class="icon"></span>Enquire
                             Now</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    <!-- End About -->
-    <!-- End History Section -->
-    <!-- Testimonial Section -->
     <x-testimonial />
-    <!-- End Testimonial Section -->
-    <!-- News Section Two -->
     <section class="news-section-two">
         <div class="auto-container">
             <div class="row clearfix">
@@ -151,5 +128,4 @@
             </div>
         </div>
     </section>
-    <!-- End News Section Two -->
 @endsection

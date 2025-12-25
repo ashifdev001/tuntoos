@@ -54,7 +54,7 @@
       @foreach ($sliderImages as $index => $slide)
         <div class="swiper-slide">
           <img src="{{ asset($slide->image_url) }}" alt="">
-          <a href="#enquiry" class="hero-enquiry-btn">
+          <a href="#enquiry" class="hero-enquiry-btn open-popup" data-attr="general-enq">
             Enquiry
           </a>
         </div>
@@ -83,9 +83,10 @@
           <div class="inner-column">
             <!-- Newsletter Form Two -->
             <div class="newsletter-form-two">
-              <form method="post" action="#">
+              <form method="post" action="#" id="deal-news-latter">
                 <div class="form-group">
                   <input type="text" name="phone" value="" placeholder="Enter Your Mobile Number ..." required="">
+                  <input type="hidden" name="enq_for" value="Franchise Model">
                   <button type="submit" class="theme-btn btn-style-one clearfix"><span
                       class="icon"></span>{{ $newsLatter['button_text'] }}</button>
                 </div>
@@ -130,7 +131,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  /* var swiper = new Swiper(".mySwiper", {
+  var swiper = new Swiper(".mySwiper", {
     loop: true,
     autoplay: {
       delay: 5000,
@@ -140,5 +141,5 @@
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-  }); */
+  });
 </script>

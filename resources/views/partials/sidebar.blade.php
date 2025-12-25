@@ -85,7 +85,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('admin.manage.home') }}" class="nav-link  {{ request()->is('admin/flavors*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.manage.home') }}" class="nav-link  {{ request()->is('admin/manage-home*') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-info-circle"></i>
                         <p>Manage Home Page</p>
                     </a>
@@ -97,8 +97,21 @@
                         <p>Teams</p>
                     </a>
                 </li>
-                
-                
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.teams') }}" class="nav-link  {{ request()->is('admin/teams*') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-info-circle"></i>
+                        <p>Teams</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.dropdown-items') }}" class="nav-link  {{ request()->is('admin/dropdown-items*') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-info-circle"></i>
+                        <p>Dropdown Items</p>
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a href="{{ route('testimonials') }}" class="nav-link  {{ request()->is('admin/testimonials*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-comment-dots"></i>

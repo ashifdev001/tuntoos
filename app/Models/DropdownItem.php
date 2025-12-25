@@ -6,21 +6,12 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Enquiry extends Model
+class DropdownItem extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'name',
-        'email',
-        'phone',
-        'enq_for',
-        'state',
-        'city',
-        'subject',
-        'message',
+        'title',
     ];
-
 
     public function getCreatedAtAttribute($value)
     {
