@@ -9,6 +9,9 @@
             font-size: 14px;
             margin-top: 5px;
         }
+        html, body {
+    overflow-x: hidden !important;
+}
     </style>
 </head>
 

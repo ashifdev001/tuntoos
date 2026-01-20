@@ -147,7 +147,7 @@
     <x-home-service-gallery />
     <!-- End Gallery Section -->
     <!-- Clent Section Start -->
-    <x-brand />
+    {{-- <x-brand /> --}}
 @endsection
 @section('scripts')
     <script>
