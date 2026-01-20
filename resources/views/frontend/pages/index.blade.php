@@ -11,22 +11,8 @@
 
     <x-slider />
     <!-- Beverage Section -->
-    <section class="beverage-section">
-        <div class="auto-container">
-            <!-- Sec Title -->
-            <div class="sec-title centered">
-                <!-- <div class="title">Best for You</div> -->
-                <h2>Our Flavors</h2>
-                <div class="separate"></div>
-            </div>
-            <x-flavors :limit="4" />
-            <div class="button-box text-center">
-                <a href="{{ route(name: 'flavor') }}" class="theme-btn btn-style-two clearfix"><span
-                        class="icon"></span>View All
-                    Flavors</a>
-            </div>
-        </div>
-    </section>
+    <x-flavors :limit="4" />
+            
     <!-- End Beverage Section -->
     <x-home-section />
     <!-- End Video Section Two -->

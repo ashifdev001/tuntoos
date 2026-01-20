@@ -9,9 +9,10 @@
     /* Enquiry Button - perfectly centered */
     .hero-enquiry-btn {
       position: absolute;
-      left: 50%;
+      left: 20px;
+      /* distance from left side */
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateY(-50%);
       background-color: #ff6a00;
       color: #ffffff;
       padding: 14px 30px;
@@ -23,6 +24,7 @@
       transition: all 0.3s ease;
       z-index: 10;
     }
+
 
     /* Hover Effect */
     .hero-enquiry-btn:hover {
