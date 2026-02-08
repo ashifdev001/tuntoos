@@ -27,12 +27,12 @@
             z-index: 5;
             padding: 50px 50px;
             border-radius: 4px;
-            background-color: #ffffff;
+            /*background-color: #ffffff;*/
         }
 
         /* Heading */
         .hero-heading {
-            font-size: 30px;
+            font-size: 25px;
             font-weight: 700;
             margin-bottom: 12px;
             line-height: 1.2;
@@ -95,7 +95,7 @@
             }
 
             .hero-heading {
-                font-size: 26px;
+                font-size: 20px;
             }
 
             .hero-subheading {
@@ -108,6 +108,7 @@
                 border-radius: 50px;
             }
         }
+        
     </style>
 @endsection
 <div class="slider_area mr_top">

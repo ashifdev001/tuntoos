@@ -70,7 +70,7 @@
 
 .modal-submit-btn {
     width: 100%;
-    background: #ff6600;
+    background: #55bbe3;
     color: #fff;
     border: none;
     padding: 12px 15px;
@@ -81,7 +81,7 @@
 }
 
 .modal-submit-btn:hover {
-    background: #e05500;
+    background: #0e91c5;
 }
 
 /* Modal open button (you can style as needed) */
@@ -136,7 +136,8 @@
 }
 
 .apply-franchise-btn {
-    background: #ff6600;      /* button color */
+    /*background: #ff6600;*/
+    background: #55bbe3;      /* button color */
     color: #fff;              /* text color */
     padding: 10px 22px;       /* size */
     border: none;
@@ -148,7 +149,7 @@
 }
 
 .apply-franchise-btn:hover {
-    background: #e05500;
+    background: #0e91c5;
 }
 
 .search-popup{
@@ -1295,7 +1296,7 @@
 
 .juice-section .content-column .inner-column{
 	position:relative;
-	padding-top:120px;
+	padding-top:0px;
 }
 
 .juice-section .content-column .sec-title{
@@ -1430,7 +1431,7 @@
 	overflow:hidden;
 	border-radius:50%;
 	text-align:center;
-	background-color:rgba(190,185,150,0.95);
+	background-color:rgb(85 187 227);
 	background-position:center center;
 	background-repeat:no-repeat;
 }
@@ -1507,7 +1508,7 @@
 }
 
 .email-form .form-group input:focus{
-	border-color:#de9190;
+	border-color:rgb(29 27 27);
 }
 
 .email-form .form-group input[type="submit"],
@@ -1518,7 +1519,7 @@
 	right:5px;
 	top:6px;
 	bottom:5px;
-	color:#beb996;
+	color:#10100f;
 	cursor:pointer;
 	border-radius:50%;
 	background:#f2f2f2;
@@ -1720,7 +1721,7 @@
 .fluid-section-one .outer-container{
 	position:relative;
 	min-height:250px;
-	background-color:#f7eee2;
+	background-color:#fdfeff;
 }
 
 .fluid-section-one .image-column{
@@ -2227,7 +2228,7 @@
 	border-radius:0px;
 	font-weight:700;
 	display:inline-block;
-	background-color:#91ad41;
+	background-color:#55bbe3;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
@@ -3371,7 +3372,7 @@
 	top:6px;
 	width:48px;
 	height:48px;
-	color:#e09897;
+	color:#55bbe3;
 	font-size:18px;
 	line-height:46px;
 	text-align:center;
@@ -3637,6 +3638,13 @@
 ====================================================================
 	Fluid Section Two
 ====================================================================
+
+/* ===== FIX RIGHT BANNER IMAGE CUTTING ===== */
+.image-column.home-right-banner {
+    background-size: contain !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+}
 
 ***/
 
@@ -7009,7 +7017,7 @@
 	width:100%;
 	line-height:18px;
 	padding:20px 22px;
-	height:250px;
+	height:115px;
 	color:#000000;
 	font-size:14px;
 	border-radius:0px;
@@ -7670,3 +7678,190 @@
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 }
+.flavor_link{
+    color: #111112 !important;
+}
+.flavor_link a:hover{
+    color: #141313 !important;
+}
+/* ===============================
+   FORCE SOCIAL BRAND COLORS
+   Header + Footer + Anywhere
+   =============================== */
+
+/* FACEBOOK */
+a[href*="facebook.com"] i,
+a[href*="facebook.com"]::before,
+a[href*="facebook.com"] svg,
+a[href*="facebook.com"] svg path {
+  color: #1877F2 !important;
+  fill: #1877F2 !important;
+}
+
+/* INSTAGRAM */
+a[href*="instagram.com"] i,
+a[href*="instagram.com"]::before,
+a[href*="instagram.com"] svg,
+a[href*="instagram.com"] svg path {
+  color: #E4405F !important;
+  fill: #E4405F !important;
+}
+
+/* TWITTER / X */
+a[href*="twitter.com"] i,
+a[href*="x.com"] i,
+a[href*="twitter.com"]::before,
+a[href*="x.com"]::before,
+a[href*="twitter.com"] svg,
+a[href*="x.com"] svg path {
+  color: #1DA1F2 !important;
+  fill: #1DA1F2 !important;
+}
+
+/* LINKEDIN */
+a[href*="linkedin.com"] i,
+a[href*="linkedin.com"]::before,
+a[href*="linkedin.com"] svg,
+a[href*="linkedin.com"] svg path {
+  color: #0A66C2 !important;
+  fill: #0A66C2 !important;
+}
+
+/* YOUTUBE */
+a[href*="youtube.com"] i,
+a[href*="youtube.com"]::before,
+a[href*="youtube.com"] svg,
+a[href*="youtube.com"] svg path {
+  color: #FF0000 !important;
+  fill: #FF0000 !important;
+}
+
+/* WHATSAPP */
+a[href*="wa.me"] i,
+a[href*="whatsapp.com"] i,
+a[href*="wa.me"]::before,
+a[href*="whatsapp.com"]::before,
+a[href*="wa.me"] svg,
+a[href*="whatsapp.com"] svg path {
+  color: #25D366 !important;
+  fill: #25D366 !important;
+}
+
+/* ===============================
+   HOVER – KEEP BRAND COLOR
+   =============================== */
+a[href*="facebook.com"]:hover *,
+a[href*="instagram.com"]:hover *,
+a[href*="twitter.com"]:hover *,
+a[href*="x.com"]:hover *,
+a[href*="linkedin.com"]:hover *,
+a[href*="youtube.com"]:hover *,
+a[href*="whatsapp.com"]:hover * {
+  filter: brightness(0.9);
+}
+/* ===============================
+   FLATICON ICON COLOR FIX
+   Twitter & LinkedIn
+   =============================== */
+
+/* Twitter (Flaticon / Icon font) */
+.flaticon-twitter::before,
+.icon-twitter::before,
+.fa-twitter,
+.fa-x-twitter {
+  color: #1DA1F2 !important;
+}
+
+/* LinkedIn (Flaticon / Icon font) */
+.flaticon-linkedin::before,
+.flaticon-linkedin-logo::before,
+.icon-linkedin::before,
+.fa-linkedin,
+.fa-linkedin-in {
+  color: #0A66C2 !important;
+}
+
+/* If icons are inside <a> */
+a .flaticon-twitter::before,
+a .flaticon-linkedin::before {
+  color: inherit !important;
+}
+
+/* Force inheritance from anchor */
+a[href*="twitter"],
+a[href*="linkedin"] {
+  color: inherit !important;
+}
+/* ===============================
+   FLATICON ICON COLOR FIX
+   Facebook & Instagram
+   =============================== */
+
+/* Facebook */
+.flaticon-facebook::before,
+.flaticon-facebook-logo::before,
+.icon-facebook::before,
+.fa-facebook,
+.fa-facebook-f {
+  color: #1877F2 !important;
+}
+
+/* Instagram */
+.flaticon-instagram::before,
+.flaticon-instagram-logo::before,
+.icon-instagram::before,
+.fa-instagram {
+  color: #E4405F !important;
+}
+
+/* If icons are inside <a> */
+a .flaticon-facebook::before,
+a .flaticon-instagram::before {
+  color: inherit !important;
+}
+
+/* Force inheritance from anchor */
+a[href*="facebook"],
+a[href*="instagram"] {
+  color: inherit !important;
+}
+
+
+/* ===============================
+   CONTACT PAGE IMAGE FIX
+   =============================== */
+
+/* Keep left form & right image equal height */
+.fluid-section-two .outer-container {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Right image column */
+.fluid-section-two .image-column.home-right-banner {
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  height: auto !important;
+  min-height: 100% !important;
+}
+
+/* Remove image cutting */
+.fluid-section-two .content-column {
+  padding-bottom: 60px;
+}
+
+/* ===============================
+   MOBILE FIX
+   =============================== */
+@media (max-width: 767px) {
+  .fluid-section-two .outer-container {
+    flex-direction: column;
+  }
+
+  .fluid-section-two .image-column.home-right-banner {
+    min-height: 320px !important;
+    background-size: contain !important;
+  }
+}
+

@@ -133,7 +133,7 @@
             </div>
 
             <!-- Image Column -->
-            <div class="image-column"
+            <div class="image-column home-right-banner"
                 style="background-image:url({{ asset('assets/frontend/images/imagebackground/ba1.jpg') }})">
                 <figure class="image-box"><img src="{{ asset('assets/frontend/images/imagebackground/ba1.jpg') }}" alt="">
                 </figure>

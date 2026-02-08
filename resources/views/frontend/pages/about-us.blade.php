@@ -11,7 +11,7 @@
     <!-- End Page Title -->
     <!-- About Section -->
     <section class="juice-section">
-        <div class="section-text">Fantoos</div>
+        <div class="section-text">Funtoos</div>
         <div class="auto-container">
             <div class="row clearfix">
 

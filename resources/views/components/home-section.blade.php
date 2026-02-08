@@ -1,6 +1,6 @@
 <!-- Fluid Section Two -->
 <section class="fluid-section-two">
-    <div class="section-text">Fantoos</div>
+    <div class="section-text"></div>
     <div class="outer-container clearfix">
 
         <!-- Content Column -->
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Image Column -->
-        <div class="image-column"
+        <div class="image-column home-right-banner image-column home-right-banner"
             style="background-image:url({{ $homeSection['rf_site_image_url'] }})">
             <figure class="image-box"><img src="{{ $homeSection['rf_site_image_url'] }}" alt="">
             </figure>
@@ -41,7 +41,7 @@
     <div class="bottom-pattern-layer"
         style="background-image: url({{ asset('assets/frontend/images/background/pattern-2.png') }})"></div>
     <div class="auto-container">
-        <div class="content-box" style="background-image: url({{ asset('assets/frontend/images/resource/deal.png') }})">
+        <div class="content-box" style="background-image: url({{ asset('<!--assets/frontend/images/resource/deal.png-->') }})">
             <div class="box-inner">
                 <!-- Sec Title -->
                 <div class="sec-title light centered">

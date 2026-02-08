@@ -22,6 +22,12 @@
             align-items: center;
             justify-content: center;
         }
+        .enqModal a{
+           color: #ffffff; 
+        }
+        .open-popup a{
+           color: #ffffff; 
+        }
     }
 
     @media (min-width: 992px) {
@@ -33,7 +39,7 @@
 <ul class="mob-action nav1 nav-fill d-sm-block d-lg-none">
     <li class="nav-item enqModal">
         <a
-            href="https://wa.me/+{{$mobileNav['site_phone'] }}?text=Hi,%20I%20want%20to%20know%20more%20about%20Luvleen%20Services">
+            href="https://wa.me/+{{$mobileNav['site_phone'] }}?text=Hi,%20I%20want%20to%20know%20more%20about%20Funtoos%20Services">
             <img src="{{asset('/assets')}}/images/whatsapp.svg" width="16" height="16"
                 alt="Contact us on whatsapp">&nbsp;&nbsp;WhatsApp
         </a>

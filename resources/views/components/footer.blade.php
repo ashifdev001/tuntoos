@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="copyright">&copy; 2025 Fantoos All Rights Reserved.</div>
+            <div class="copyright">&copy; 2025 Funtoos All Rights Reserved.</div>
         </div>
     </div>
 </footer>

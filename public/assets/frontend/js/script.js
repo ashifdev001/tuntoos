@@ -83,9 +83,13 @@
 			$(this).prev('ul').slideToggle(500);
 		});
 		//Menu Toggle Btn
-		$('.mobile-nav-toggler').on('click', function () {
-			$('body').addClass('mobile-menu-visible');
-		});
+		$('.mobile-nav-toggler').on('click',function () {
+            $('body').addClass('mobile-menu-visible');
+        });
+        $('.navSidebar-button').on('click', function () {
+             $('body').addClass('mobile-menu-visible');
+        });
+
 
 		//Menu Toggle Btn
 		$('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function () {

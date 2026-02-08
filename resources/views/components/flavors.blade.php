@@ -16,9 +16,9 @@
                                 <div class="overlay-inner">
                                     <div class="content">
                                         <a href="{{  $flavor->image_url }}" data-fancybox="gallery" data-caption=""
-                                            class="icon flaticon-plus"></a>
-                                        <div class="lower-content">
-                                            <h6><a href="javascript:void(0)">{{ $flavor->title }}</a></h6>
+                                            class="icon flaticon-plus flavor_link"></a>
+                                        <div class="lower-content flavor-title">
+                                            <h3 class="flavor-title">{{ $flavor->title }}</h3>
                                             <div class="products">
                                                 {{ \Illuminate\Support\Str::limit($flavor->description, 60) }}</div>
                                         </div>
@@ -26,6 +26,7 @@
                                 </div>
                             </div>
                         </figure>
+                        <!--<h3 class="flavor-title">Green Apple</h3>-->
                     </div>
                 </div>
             @empty
